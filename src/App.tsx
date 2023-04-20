@@ -1,13 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Header } from './components/Header';
+import { NewTask } from './components/NewTask'
+
+import './global.css';
+import styles from './App.module.css'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <div className="App">
-
+      <Header />
+      <NewTask />
     </div>
   )
 }
