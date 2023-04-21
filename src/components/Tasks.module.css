@@ -1,0 +1,39 @@
+.tasksWrapper {
+    margin-top: 5.687rem;
+}
+
+.tasksHeader {
+    display: flex;
+    font-weight: 700;
+    padding-bottom: 2rem;
+    justify-content: space-between;
+    color: var(--gray-200);
+}
+
+.tasksHeader p:first-child {
+    color: var(--blue);
+}
+
+.tasksHeader p:last-child {
+    color: var(--purple);
+}
+
+.tasksTracker {
+    font-size: 0.875rem;
+}
+
+.tasksCounter {
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    padding: 2px 8px;
+    margin-left: 0.5rem;
+
+    color: var(--gray-100);
+    background-color: var(--gray-400);
+    border-radius: 8px;
+}
+
+.activeTasks {
+    color: var(--gray-100);
+}

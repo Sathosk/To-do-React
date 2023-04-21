@@ -1,5 +1,12 @@
 .wrapper {
-    width: 51%;
+    position: relative;
+    width: 46rem ;
     height: 100px;
-    border: 1px solid red;
+    margin: 0 auto;
+}
+
+@media (max-width: 736px) {
+    .wrapper {
+        width: 100%;
+    }
 }

@@ -1,0 +1,14 @@
+.wrapper {
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--gray-300);
+}
+
+.wrapper img {
+    margin: 4rem 0 1rem 0;
+}
+
+h3 {
+    font-size: 1rem;
+}
