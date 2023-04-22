@@ -19,6 +19,7 @@
 
 .button {
     border: none;
+    height: 24px;
     background: transparent;
     cursor: pointer;
 }
@@ -28,6 +29,7 @@
 }
 
 .taskText {
+    word-break: break-word;
     flex: 2;
 }
 

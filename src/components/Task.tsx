@@ -1,16 +1,29 @@
 import { Trash, Circle, Check } from 'phosphor-react'
 import styles from './Task.module.css'
 
-export function Task() {
+interface DataArray {  
+    createdAt: string
+    text: string
+    isCompleted: boolean
+}
+
+interface TaskProp {
+    taskList: DataArray
+    deleteTask: (createdAt: string) => void;
+}
+
+export function Task({ taskList, deleteTask }: TaskProp) {
+
+
     return (
-        <div className={styles.activeTasks}>
+        <li className={styles.activeTasks}>
             <button className={styles.button}>
-                <Circle className={styles.notCompleted} weight='bold' size={20}/>
+                <Circle className={styles.notCompleted} weight='bold' size={24}/>
             </button>
-            <p className={styles.taskText}>Test test test test</p>
-            <button className={styles.button}>
+            <p className={styles.taskText}>{ taskList.text }</p>
+            <button className={styles.button} onClick={() => deleteTask(taskList.createdAt)}>
                 <Trash size={24}/>
             </button>
-        </div>
+        </li>
     )
 }
