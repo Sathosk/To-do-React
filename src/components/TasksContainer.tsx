@@ -29,7 +29,7 @@ export function TasksContainer({ taskList, deleteTask, handleChecked }: TaskList
                 <p className={styles.tasksTracker}>
                     Completed
                     <span className={styles.tasksCounter}>
-                        {completedTasks.length} de {taskList.length}
+                        {completedTasks.length} of {taskList.length}
                     </span>
                 </p>
             </header>
