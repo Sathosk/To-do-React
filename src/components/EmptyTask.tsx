@@ -1,5 +1,5 @@
 import styles from './EmptyTask.module.css'
-import clipboard from '../assets/clipboard.svg'
+import clipboard from '/src/assets/clipboard.svg'
 
 export function EmptyTask() {
     return (
