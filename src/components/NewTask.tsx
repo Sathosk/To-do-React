@@ -40,12 +40,12 @@ export function NewTask({addNewTask}: Props) {
                 onChange={handleInputChange}
                 name='taskText'
                 value={newTask}
-                placeholder='Adicionar uma nova tarefa'
+                placeholder='Add new task'
                 required
                 className={styles.taskInput}
             />
             <button type='submit'>
-                Criar
+                Create
                 <PlusCircle weight='bold' size={19}/>
             </button>
         </form>

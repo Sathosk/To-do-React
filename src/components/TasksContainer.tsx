@@ -21,13 +21,13 @@ export function TasksContainer({ taskList, deleteTask, handleChecked }: TaskList
         <section className={styles.tasksWrapper}>
             <header className={styles.tasksHeader}>
                 <p className={styles.tasksTracker}>
-                    Tarefas criadas
+                    Created tasks
                     <span className={styles.tasksCounter}>
                         {taskList.length}
                     </span>
                 </p>
                 <p className={styles.tasksTracker}>
-                    Concluídas
+                    Completed
                     <span className={styles.tasksCounter}>
                         {completedTasks.length} de {taskList.length}
                     </span>
