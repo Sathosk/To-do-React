@@ -41,6 +41,7 @@ export function NewTask({addNewTask}: Props) {
                 name='taskText'
                 value={newTask}
                 placeholder='Adicionar uma nova tarefa'
+                required
                 className={styles.taskInput}
             />
             <button type='submit'>

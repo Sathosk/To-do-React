@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 
 import './global.css';
 import styles from './App.module.css'
-import { Task } from './components/Task';
 
 interface DataArray {
     createdAt: string
@@ -14,14 +13,34 @@ interface DataArray {
 }
 
 function App() {
-    const [taskList, setTaskList] = useState<DataArray[]>([]);
+    // Load tasks from local storage on mount
+    const [taskList, setTaskList] = useState<DataArray[]>(() => {
+        const storedTasks = localStorage.getItem('taskList');
+        return storedTasks ? JSON.parse(storedTasks) : [];
+    });
 
-    // useEffect(() => {
-    //     console.log(taskList);
-    // }, [taskList])
+    // Save tasks to local storage whenever taskList changes
+    useEffect(() => {
+        localStorage.setItem('taskList', JSON.stringify(taskList));
+    }, [taskList]);
 
     function addNewTask(obj: DataArray) {
         setTaskList(state => [...state, obj])
+    }
+
+    function handleChecked(createdAt: string) {
+        const updatedList = taskList.map(task => {
+            if (task.createdAt === createdAt) {
+                return {
+                  ...task,
+                  isCompleted: !task.isCompleted
+                };
+              }
+
+            return task;
+        })
+
+        setTaskList(updatedList);
     }
 
     function deleteTask(createdAt: string) {
@@ -29,7 +48,7 @@ function App() {
             return task.createdAt !== createdAt;
         })
 
-        setTaskList(updatedTaskList)
+        setTaskList(updatedTaskList);
     }
 
     return (
@@ -37,7 +56,11 @@ function App() {
             <Header />
             <main className={styles.wrapper}>
                 <NewTask addNewTask={addNewTask}/>
-                <TasksContainer taskList={taskList} deleteTask={deleteTask}/>
+                <TasksContainer 
+                    taskList={taskList} 
+                    deleteTask={deleteTask} 
+                    handleChecked={handleChecked}
+                />
             </main>
         </div>
     )

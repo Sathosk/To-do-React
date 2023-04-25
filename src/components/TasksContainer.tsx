@@ -11,19 +11,26 @@ interface DataArray {
 interface TaskListProp {
     taskList: DataArray[]
     deleteTask: (createdAt: string) => void;
+    handleChecked: (createdAt: string) => void;
 }
 
-export function TasksContainer({ taskList, deleteTask }: TaskListProp) {
+export function TasksContainer({ taskList, deleteTask, handleChecked }: TaskListProp) {
+    const completedTasks = taskList.filter(task => task.isCompleted);
+
     return (
         <section className={styles.tasksWrapper}>
             <header className={styles.tasksHeader}>
                 <p className={styles.tasksTracker}>
                     Tarefas criadas
-                    <span className={styles.tasksCounter}>5</span>
+                    <span className={styles.tasksCounter}>
+                        {taskList.length}
+                    </span>
                 </p>
                 <p className={styles.tasksTracker}>
                     Concluídas
-                    <span className={styles.tasksCounter}>2 de 5</span>
+                    <span className={styles.tasksCounter}>
+                        {completedTasks.length} de {taskList.length}
+                    </span>
                 </p>
             </header>
 
@@ -37,6 +44,7 @@ export function TasksContainer({ taskList, deleteTask }: TaskListProp) {
                                 key={task.createdAt} 
                                 taskList={task}
                                 deleteTask={deleteTask}
+                                handleChecked={handleChecked}
                             />
                         )
                     )}
