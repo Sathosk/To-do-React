@@ -22,7 +22,8 @@ export function Task({ taskList, deleteTask, handleChecked }: TaskProp) {
             {taskList.isCompleted ? (
                 <>
                     <button
-                        className={`${styles.check} ${styles.button} ${styles.checkCompleted}`} 
+                        className={`${styles.button} ${ taskList.isCompleted ? styles.checkCompleted : styles.check }`} 
+                        // className={`${styles.check} ${styles.button} ${styles.checkCompleted}`} 
                         onClick={() => handleChecked(taskList.createdAt)}>
                             <Check weight='bold' size={12}/>
                     </button>

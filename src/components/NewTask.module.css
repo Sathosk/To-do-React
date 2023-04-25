@@ -18,7 +18,8 @@
 }
 
 .taskInput:focus {
-    border-color: var(--gray-300);
+    color: var(--gray-100);
+    border-color: var(--purple-dark);
     transition: border-color 0.5s;
 }
 
@@ -37,4 +38,9 @@
     gap: 0.5rem;
 
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.wrapper button:hover {
+    background-color: var(--blue);
 }
