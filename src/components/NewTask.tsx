@@ -42,6 +42,8 @@ export function NewTask({addNewTask}: Props) {
                 value={newTask}
                 placeholder='Add new task'
                 required
+                pattern="^(?!\s*$).+"
+                title="Please enter a task before submitting"
                 className={styles.taskInput}
             />
             <button type='submit'>
