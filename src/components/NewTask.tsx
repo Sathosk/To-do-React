@@ -22,7 +22,7 @@ export function NewTask({addNewTask}: Props) {
         const task = {
             createdAt: new Date().toISOString(),
             text: newTask,
-            isCompleted: false 
+            isCompleted: false
         }
 
         addNewTask(task);
